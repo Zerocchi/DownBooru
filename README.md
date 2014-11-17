@@ -16,5 +16,5 @@ newpath = r'<your directory here>\{}'.format(tags).split("+")[0]
 ```
 
 Dependency: 
--BeautifulSoup4
+- BeautifulSoup4
 
