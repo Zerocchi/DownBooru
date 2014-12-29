@@ -5,7 +5,7 @@ import time
 import urllib
 
 tags = raw_input("Enter tags: ").strip()
-limit = raw_input("Enter limit: ")
+limit = raw_input("Enter limit (leave it to download all): ")
 
 url = "http://gelbooru.com/index.php?page=dapi&s=post&q=index&tags={}&limit={}".format(tags,limit)
 
