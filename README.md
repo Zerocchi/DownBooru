@@ -1,20 +1,24 @@
 GelDown
 =======
 
-Simple Gelbooru CLI Downloader. Specifically designed for Windows.
+Simple Gelbooru CLI Downloader. Specifically designed for Linux.
 
-Default directory is `C:\Gelbooru`, but you can change the directory to anywhere you want by editing
+Usage
+
+Tags: Tags can be as simple as character name (e.g. misaka_mikoto, uzumaki_naruto) or by adding extra tag (e.g. shana short_hair)
 
 ```python
-newpath = r'C:Gelbooru\{}'.format(tags).split("+")[0]
+Enter tags: misaka_mikoto short_hair
 ```
 
-into
+Limit: Enter how much limit of images to download
 
 ```python
-newpath = r'<your directory here>\{}'.format(tags).split("+")[0]
+Enter limit: 5
 ```
 
 Dependency: 
 - BeautifulSoup4
+
+
 

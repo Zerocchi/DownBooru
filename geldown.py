@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import os
 import sys
 import time
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
 
 tags = input("Enter tags: ").strip()
 limit = eval(input("Enter limit: "))
@@ -16,8 +16,8 @@ links = {}
 for post in soup.findAll('post'):
 	post_attrs = dict(post.attrs)
 	url = post_attrs['file_url']
-	id = post_attrs['id']
-	links[id] = url
+	uid = post_attrs['id']
+	links[uid] = url
 
 def reporthook(count, block_size, total_size):
 		global start_time
@@ -37,20 +37,20 @@ def reporthook(count, block_size, total_size):
 			sys.stdout.flush()
 			
 def save(url, filename):
-	newpath = r'Danbooru'.format(tags).split("+")[0]  
-	if not os.path.exists(newpath):	# if folder not exists, create new folder based on tags name
-		os.makedirs(newpath)
-	os.chdir(newpath)
-	if os.path.isfile(filename):
-		print("\rFile already exists")
-	else:
-		urllib.request.urlretrieve(url, filename, reporthook)
-		print()
+	urllib.request.urlretrieve(url, filename, reporthook)
+	print()
 
 if __name__ == '__main__':
+	newpath = '{}'.format(tags).split("+")[0]
+	try:  
+		os.makedirs(newpath)
+	except FileExistsError:
+		print("File already exist. Overwriting...")
+		pass
+	os.chdir(newpath)
 	for each in links:
 		try:
 			save(links[each], each + "." + links[each].split(".")[-1])
 		except urllib.request.ContentTooShortError:
 			print("\nDownload incomplete. Please try again.")
-		
+	
