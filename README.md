@@ -1,7 +1,7 @@
 GelDown
 =======
 
-Simple Gelbooru CLI Downloader. Specifically designed for Linux.
+Simple Gelbooru CLI Downloader. Specifically designed for ~~Windows~~ Linux. Python 3 required.
 
 Usage
 
