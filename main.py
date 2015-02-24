@@ -28,6 +28,6 @@ def makefile(path=None):
     os.chdir(location)
 
 if __name__ == "__main__":
-    tag = runbooru("aisaka_taiga sex", 6)
+    tag = runbooru("aisaka_taiga", 6)
     makefile("../Images")
     [urllib.request.urlretrieve(url, "{0}/{1}".format(os.getcwd(), url.split("/")[-1])) for url in tag.parse()]
