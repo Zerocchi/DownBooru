@@ -1,6 +1,6 @@
 __author__ = 'zerocchi'
 
-from parser.booru import Gelbooru, Danbooru, Safebooru, Rule34
+from parser.booru import Gelbooru, Danbooru, Konachan, Rule34, Yandere
 import datetime as dt
 import os
 import urllib.request
@@ -14,6 +14,10 @@ def runbooru(tags, limit, booru="Danbooru"):
         tag = Gelbooru(tags, limit)
     elif booru == "Rule34":
         tag = Rule34(tags, limit)
+    elif booru == "Konachan":
+        tag = Konachan(tags, limit)
+    elif booru == "Yandere":
+        tag = Yandere(tags, limit)
     return tag
 
 
@@ -28,6 +32,9 @@ def makefile(path=None):
     os.chdir(location)
 
 if __name__ == "__main__":
-    tag = runbooru("aisaka_taiga", 6)
+    tag = str(input("Tag: > "))
+    limit = int(input("Limit: > "))
+    booru = str(input("Booru (leave empty for default): > "))
+    tag = runbooru(tag, limit, booru)
     makefile("../Images")
     [urllib.request.urlretrieve(url, "{0}/{1}".format(os.getcwd(), url.split("/")[-1])) for url in tag.parse()]
