@@ -25,5 +25,20 @@ Limit: Enter how much limit of images to download
 Enter limit: 5
 ```
 
+Booru: Enter imageboard you prefer to use (default is Danbooru)
+
+```python
+Enter booru: Konachan
+```
+
+For now the images will be saved at `~/Image`, will add support to choose other directory easily.
+
+Or you can manually edit the location path by opening `main.py` and edit
+
+```python
+makefile("../Images")
+```
+to your desired path.
+
 **Dependencies**:
 * BeautifulSoup4
