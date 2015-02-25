@@ -1,9 +1,17 @@
-GelDown
-=======
+# DownBooru ![](https://img.shields.io/badge/Python-3.4-blue.svg?style=flat-square)
+###### Formerly known as GelDown
 
-Simple Gelbooru CLI Downloader. Specifically designed for ~~Windows~~ Linux. Python 3 required.
+Simple Imageboard CLI Downloader.
 
-Usage
+**Supported imageboards**:
+* Danbooru
+* Gelbooru
+* Safebooru
+* Rule34
+* Yande.re
+* Konachan
+
+**Usage**
 
 Tags: Tags can be as simple as character name (e.g. misaka_mikoto, uzumaki_naruto) or by adding extra tag (e.g. shana short_hair)
 
@@ -17,8 +25,5 @@ Limit: Enter how much limit of images to download
 Enter limit: 5
 ```
 
-Dependency: 
-- BeautifulSoup4
-
-
-
+**Dependencies**:
+* BeautifulSoup4
