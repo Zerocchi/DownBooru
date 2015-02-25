@@ -1,3 +1,5 @@
+# This is old not working Danbooru downloader script. It will be deleted soon.
+
 from bs4 import BeautifulSoup
 import os
 import sys
