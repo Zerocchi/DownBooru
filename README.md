@@ -8,6 +8,8 @@ Simple Imageboard CLI Downloader.
 * Gelbooru
 * Safebooru
 * Rule34
+* Yande.re
+* Konachan
 
 **Dependencies**:
 * BeautifulSoup4
