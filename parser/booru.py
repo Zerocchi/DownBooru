@@ -27,29 +27,44 @@ class Booru:
 class Gelbooru(Booru):
 
     base_url = "http://gelbooru.com"
+    api_url = u"/index.php?page=dapi&s=post&q=index&tags={0}&limit={1}"
 
     def __init__(self, tags, limit):
-        self.url = self.base_url + u"/index.php?page=dapi" \
-                                   u"&s=post&q=index&tags={0}&limit={1}".format(tags, limit)
+        self.url = self.base_url + self.api_url.format(tags, limit)
 
     def parse(self):
+        img_key = 'post'
         data = super().get_data(self.url)
-        links = [dict(post.attrs)['file_url'] for post in data.findAll('post')]
+        links = [dict(post.attrs)['file_url'] for post in data.findAll(img_key)]
         return links
 
 
 class Danbooru(Booru):
 
     base_url = "https://danbooru.donmai.us"
+    api_url = "/posts.xml?tags={0}&limit={1}"
 
     def __init__(self, tags, limit):
         tags = tags.split()
-        self.url = self.base_url + "/posts.xml?tags=%s&limit=%s" % ("+".join(tags), limit)
+        self.url = self.base_url + self.api_url.format("+".join(tags), limit)
 
     def parse(self):
         data = super().get_data(self.url)
         links = [self.base_url + post.find('file-url').string.strip() for
                  post in data.findAll('post') if post is not None]
+        return links
+
+class Konachan(Gelbooru):
+
+    base_url = "http://konachan.com"
+    api_url = "/post.xml?tags={0}&limit={1}"
+
+    def __init__(self, tags, limit):
+        super().__init__(tags, limit)
+
+    def parse(self):
+        img_key = 'file_url'
+        links = super().parse()
         return links
 
 
@@ -64,6 +79,14 @@ class Safebooru(Gelbooru):
 class Rule34(Gelbooru):
 
     base_url = "http://rule34.xxx"
+
+    def __init__(self, tags, limit):
+        super().__init__(tags, limit)
+
+
+class Yandere(Konachan):
+
+    base_url = "http://yande.re"
 
     def __init__(self, tags, limit):
         super().__init__(tags, limit)
