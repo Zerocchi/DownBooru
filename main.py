@@ -32,9 +32,9 @@ def makefile(path=None):
     os.chdir(location)
 
 if __name__ == "__main__":
-    tag = str(input("Tag: > "))
-    limit = int(input("Limit: > "))
-    booru = str(input("Booru (leave empty for default): > "))
+    tag = str(input("Enter tags: "))
+    limit = int(input("Enter limit: "))
+    booru = str(input("Enter booru: "))
     tag = runbooru(tag, limit, booru)
     makefile("../Images")
     [urllib.request.urlretrieve(url, "{0}/{1}".format(os.getcwd(), url.split("/")[-1])) for url in tag.parse()]
