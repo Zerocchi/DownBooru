@@ -20,4 +20,14 @@ def makefile(path=None):
 
 def dochelp():
     """Usage: python main.py <tags> <limit> <booru>
-<tags> should be enclosed in quotation mark if tag is more than single word"""
+<tags> should be enclosed in quotation mark if tag is more than single word
+Supported booru keywords:
+
+    * Danbooru
+    * Gelbooru
+    * Safebooru
+    * Rule34
+    * Yandere
+    * Konachan
+
+"""
