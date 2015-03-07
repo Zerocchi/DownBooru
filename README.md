@@ -31,12 +31,12 @@ Booru: Enter imageboard you prefer to use (default is Danbooru)
 Enter booru: Konachan
 ```
 
-For now the images will be saved at `~/Image`, will add support to choose other directory easily.
+For now the default save location is at `~/Images`, will add support to choose other directory easily.
 
 Or you can manually edit the location path by opening `main.py` and edit
 
 ```python
-makefile("../Images")
+makefile("/home/%s/Images" % getpass.getuser())
 ```
 to your desired path.
 
