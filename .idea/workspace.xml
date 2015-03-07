@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c22991d-9634-4cb9-9288-aff1d70d3466" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/supported.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Downbooru.iws" />
@@ -52,10 +52,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="supported.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="supported.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/supported.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2734177" vertical-offset="0" max-vertical-offset="395">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
               <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
               <folding />
             </state>
@@ -74,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.62068963" vertical-offset="0" max-vertical-offset="774">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.713881" vertical-offset="162" max-vertical-offset="774">
+              <caret line="23" column="151" selection-start-line="23" selection-start-column="151" selection-end-line="23" selection-end-column="151" />
               <folding />
             </state>
           </provider>
@@ -101,11 +101,11 @@
         <option value="$PROJECT_DIR$/parser/danbooru.py" />
         <option value="$PROJECT_DIR$/parser/gelbooru.py" />
         <option value="$PROJECT_DIR$/parser/interface.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/parser/booru.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/util.py" />
         <option value="$PROJECT_DIR$/docs/supported.txt" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -454,7 +454,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425726647923</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add list of supported keywords">
+      <created>1425727193007</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1425727193007</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -505,7 +511,8 @@
     <MESSAGE value="cut elif clauses into dict" />
     <MESSAGE value="update README.md" />
     <MESSAGE value="move file and help to util directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="move file and help to util directory" />
+    <MESSAGE value="add list of supported keywords" />
+    <option name="LAST_COMMIT_MESSAGE" value="add list of supported keywords" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -734,17 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.62068963" vertical-offset="0" max-vertical-offset="774">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="558">
@@ -757,10 +753,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/supported.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2734177" vertical-offset="0" max-vertical-offset="395">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
           <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.713881" vertical-offset="162" max-vertical-offset="774">
+          <caret line="23" column="151" selection-start-line="23" selection-start-column="151" selection-end-line="23" selection-end-column="151" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
   </component>
