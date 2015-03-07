@@ -17,12 +17,11 @@ Simple Imageboard CLI Downloader.
 python main.py <tags> <limit> <booru>
 ```
 
-Tags: Tags can be as simple as character name (e.g. misaka_mikoto, uzumaki_naruto) or by adding extra tag wrapped in 
- quotation mark (e.g. "shana short_hair").
-
-Limit: Enter how much limit of images to download.
-
-Booru: Enter imageboard you prefer to use.
+Argument  | Description
+------------- | -------------
+| Tags  | Tags can be as simple as character name (e.g. misaka_mikoto, uzumaki_naruto) or by adding extra tag wrapped in quotation mark (e.g. "shana short_hair"). |
+| Limit | Enter how much limit of images to download. |
+| Booru | Enter imageboard you prefer to use. |
 
 
 For now the default save location is at `~/Images`, will add support to choose other directory easily.
