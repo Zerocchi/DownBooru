@@ -6,7 +6,7 @@ import os
 import urllib.request
 
 
-def runbooru(tags, limit, booru="Danbooru"):
+def runbooru(tags, limit=0, booru="Danbooru"):
     tag = Danbooru(tags, limit)
     if booru == "danbooru":
         tag = Danbooru(tags, limit)
@@ -29,14 +29,16 @@ def makefile(path=None):
     else:
         location = "{}".format(dt.datetime.now().strftime('%Y%m%d%H%M%S'))
 
-    if not FileExistsError:
-        os.mkdir(location)
+    if not os.path.exists(location):
+        os.makedirs(location)
+
     os.chdir(location)
+    print(os.path.join(os.path.dirname(__file__)))
 
 if __name__ == "__main__":
     tag = str(input("Enter tags: "))
-    limit = int(input("Enter limit: "))
+    limit = input("Enter limit: ")
     booru = str(input("Enter booru: "))
     tag = runbooru(tag, limit, booru.lower())
-    makefile("../Images")
+    makefile("/home/user/Images")
     [urllib.request.urlretrieve(url, "{0}/{1}".format(os.getcwd(), url.split("/")[-1])) for url in tag.parse()]
