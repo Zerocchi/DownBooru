@@ -2,24 +2,16 @@ __author__ = 'zerocchi'
 
 from parser.booru import Gelbooru, Danbooru, Safebooru, Konachan, Rule34, Yandere
 import datetime as dt
+import getpass
 import os
+import sys
 import urllib.request
 
 
 def runbooru(tags, limit=0, booru="Danbooru"):
-    tag = Danbooru(tags, limit)
-    if booru == "danbooru":
-        tag = Danbooru(tags, limit)
-    elif booru == "gelbooru":
-        tag = Gelbooru(tags, limit)
-    elif booru == "rule34":
-        tag = Rule34(tags, limit)
-    elif booru == "konachan":
-        tag = Konachan(tags, limit)
-    elif booru == "yandere":
-        tag = Yandere(tags, limit)
-    elif booru == "safebooru":
-        tag = Safebooru(tags, limit)
+    processors = {f.__name__: f for f in (Danbooru, Gelbooru, Konachan, Yandere, Safebooru)}
+    if booru in processors:
+        tag = processors[booru](tags, limit)
     return tag
 
 
@@ -36,9 +28,7 @@ def makefile(path=None):
     print(os.path.join(os.path.dirname(__file__)))
 
 if __name__ == "__main__":
-    tag = str(input("Enter tags: "))
-    limit = input("Enter limit: ")
-    booru = str(input("Enter booru: "))
-    tag = runbooru(tag, limit, booru.lower())
-    makefile("/home/user/Images")
+    script, tag, limit, booru = sys.argv
+    tag = runbooru(tag, limit, booru)
+    makefile("/home/%s/Images" % getpass.getuser())
     [urllib.request.urlretrieve(url, "{0}/{1}".format(os.getcwd(), url.split("/")[-1])) for url in tag.parse()]
