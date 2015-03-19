@@ -29,7 +29,7 @@ For now the default save location is at `~/Downloads/Downbooru`, will add suppor
 Or you can manually edit the location path by opening `main.py` and edit
 
 ```python
-makefile("/home/%s/Images" % getpass.getuser())
+makefile(<path>)
 ```
 to your desired path.
 
