@@ -19,7 +19,7 @@ if __name__ == "__main__":
     try:
         script, tag, limit, booru = sys.argv
         tag = runbooru(tag, limit, booru)
-        util.makefile("/home/%s/Images" % getpass.getuser())  # Make file if it doesn't exist
+        util.makefile("/home/%s/Downloads/Downbooru" % getpass.getuser())  # Make file if it doesn't exist
         # Download each images from parsed URLs
         [urllib.request.urlretrieve(url, "{0}/{1}".format(os.getcwd(), url.split("/")[-1])) for url in tag.parse()]
     except ValueError:

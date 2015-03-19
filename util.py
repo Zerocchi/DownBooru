@@ -15,7 +15,6 @@ def makefile(path=None):
         os.makedirs(location)
 
     os.chdir(location)
-    print(os.path.join(os.path.dirname(__file__)))
 
 
 def dochelp():
